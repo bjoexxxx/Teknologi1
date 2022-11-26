@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Teknologi 1: Læringsmål: Mini projekt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+            $("#tabs-om-1").tabs();
+            $("#tabs-om-2").tabs();
+            $("#tabs-om-3").tabs();
+            $("#tabs-om-4").tabs();
+
+            $("#btnRun").click(function () {
+                $.ajax({
+                    url: "https://api.nationalize.io/?name=" +
+                        encodeURIComponent($("#navn").val()), success: function (result) {
+                        $("#webresult").html("");
+                        $.each(result.country, function (i) {
+                            $.each(result.country[i], function (key, val) {
+                                $("#webresult").append("<div>" + key + ": " + val + "</div>");
+                            });
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="tabs">
+    <ul>
+        <li><a href="#start">Start</a></li>
+        <li><a href="#om-1">Område 1</a></li>
+        <li><a href="#om-2">Område 2</a></li>
+        <li><a href="#om-3">Område 3</a></li>
+        <li><a href="#om-4">Område 4</a></li>
+        <li><a href="#webs">Webservice</a></li>
+    </ul>
+    <div id="start">
+        <p><b>Programmet arbejder med de 4 læringsmålsområder</b></p>
+        <table>
+            <tr>
+                <td>Område 1: Cloud, Operativ systemer, Database.</td>
+            </tr>
+            <tr>
+                <td>Område 2: Talsystemer, Debug.</td>
+            </tr>
+            <tr>
+                <td>Område 3: Samtidighedsproblematikker.</td>
+            </tr>
+            <tr>
+                <td>Område 4: Computernetværk.</td>
+            </tr>
+            <tr>
+                <td>Webservice: Test område af webservice</td>
+            </tr>
+        </table>
+        <br/>
+
+        Mini projektet er udarbejdet af
+        <br/><br/>
+        Jeres fuldenavne og KEA e-mail tilføj evt. gruppenavn.
+        <br/><br/>
+        Afleveringsdato
+
+    </div>
+    <div id="om-1">
+        <div id="tabs-om-1">
+            <ul>
+                <li><a href="#sp-1">1</a></li>
+                <li><a href="#sp-2">2</a></li>
+                <li><a href="#sp-3">3</a></li>
+                <li><a href="#sp-4">4</a></li>
+                <li><a href="#sp-5">5</a></li>
+                <li><a href="#sp-6">6</a></li>
+                <li><a href="#sp-7">7</a></li>
+                <li><a href="#sp-8">8</a></li>
+            </ul>
+            <div id="sp-1">Beskriv en computers hardware.
+                <p>Svar:</p>
+                <p>RAM, Harddisk, GPU, Motherboard, CPU, PSU, Køleanlæg, kabinet </p>
+            </div>
+            <div id="sp-2">Beskriv Azure Cloud og hvad du kan bruge den til.
+                <p>Svar:</p>
+                <p>Azure Cloud er en service der lejer serverplads til
+                    DB og virtual machines</p>
+
+            </div>
+            <div id="sp-3"> Hvilke typer harddiske findes i en computer og
+                hvad er forskellen på dem?
+                <p>Svar:</p>
+                <p>SSD og HDD(HardDiskDrive)</p>
+            </div>
+            <div id="sp-4"> Hvilke typer busser findes der i en computer?
+                <p>Svar:</p>
+                <p>Address bus - carries memory addresses from the processor to other
+                    components such as primary storage and input/output devices<br/>
+                    Data bus - carries the data between the processor and
+                    other components<br/>
+                    Control bus - carries control signals from the processor to
+                    other components.</p>
+            </div>
+            <div id="sp-5"> Hvad er forskellen på IP og MAC?
+                <p>Svar:</p>
+                <p>MAC(MediaAcessControll) fysisk addresse på din maskine<br/>
+                    IP Global addresse der indentificerer dig på nettet så du kan sende/få
+                    info
+                </p>
+            </div>
+            <div id="sp-6"> Hvilke typer kategorier findes der for en PSU
+                og hvad betyder de?
+                <p>Svar:</p>
+                <p>kategorierne er opdelt i ædelmetaler bronze,sølv,guld etc.<br/>
+                    dette angiver hvor effektivt de vidgiver strøm til din enhed
+                </p>
+            </div>
+            <div id="sp-7"> Hvad er forskellen på RAM og Harddisk?
+                <p>Svar:</p>
+                <p>RAM er korttidshukommelsen der kører dine nuværende processer<br/>
+                    Harddisken er langtidshukommelsen og gemmer din data også når den ikke
+                    bliver brugt
+                </p>
+            </div>
+            <div id="sp-8"> Hvad er et DBMS MySQL og hvad kan det bruges til?
+                <p>Svar:</p>
+                <p>en editor der styrer databaser specifikt i form af queries</p>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="om-2">
+        <div id="tabs-om-2">
+            <ul>
+                <li><a href="#sp-1">1</a></li>
+                <li><a href="#sp-2">2</a></li>
+                <li><a href="#sp-3">3</a></li>
+                <li><a href="#sp-4">4</a></li>
+            </ul>
+            <div id="sp-1">Forklar hvad vi kan bruge følgende talsystemer til samt deres navne:
+                <p>16 tal systemet <br/>
+                10 tal systemet <br/>
+                2 tal systemet <br/>
+                Svar:<br/>
+                16 systemet eller hexadecimal er et system der går fra 0-G heraf 16 tal<br/>
+                det bruges primært til at opbevarer store mængder af data på kortere form end binær.<br/>
+                10 tals systemet eller decimal der det system vi mennesker normalt bruger 0-9<br/>
+                dette bruges udelukkende for mennekskelig forståelse<br/>
+                2 tal systemet eller binær består af 0 og 1<br/>
+                dette sprog er det eneste maskiner forstår og alt data bliver derfor oversat til dette</p>
+
+            </div>
+            <div id="sp-2">Forklar hvordan man regner mellem binær og decimal:
+                <p>binær har kun to tal og hvert tal i rækken venstre mod højre bliver derfor dobbelt så stort,<br/>
+                som forrige så 1 = 1, 2 = 10, 3 = 11, 4 = 100, 5 = 101 osv. </p>
+            </div>
+            <div id="sp-3">Forklar hvordan man regner mellem binær og hexadecimal:
+                <p>samme måde som binær til decimal bare<br/>
+                1 = 1, 9 = 1001, a = 1010, b = 1011, c = 1100, d = 1101</p>
+
+            </div>
+            <div id="sp-4">Beskriv hvordan man opretter et MySQL DBMS på Azureog hvad vi kan bruge sådan et til.
+                <p>Azure er en webservice af microsoft som udlejer serverplads og virtuelle maskiner<br/>
+                så vis jeg lejer serverplads på azure så kan jeg hoste min DB på deres servere<br/>
+                selve DB laves som normalt</p>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="om-3">
+        <div id="tabs-om-3">
+            <ul>
+                <li><a href="#sp-1">1</a></li>
+                <li><a href="#sp-2">2</a></li>
+                <li><a href="#sp-3">3</a></li>
+                <li><a href="#sp-4">4</a></li>
+            </ul>
+        <div id="sp-1">Beskriv hvad der gør et problem til et samtidighedsproblem:
+            <p>
+                samtidighedsproblemer opstår når flere ting skal til den samme ting samtidigt
+            </p>
+        </div>
+        <div id="sp-2">Beskriv en type af samtidighedsproblem:
+            <p>
+                tilgangs problem, når mange folk skal loade en side samtidigt<br/>
+                hvis der ikke er processorkraft nok til at åbne alle sider der skal åbnes samtidigt<br/>
+                kan der ske det at nogle sider ikke loader eller loader langsommmere
+            </p>
+        </div>
+        <div id="sp-3">Findes der standart løsninger til samtidighedsproblemer:
+            <p>
+                mere processorkraft, mere serverplads osv. for ting der skaber problemer med mængde
+            </p>
+        </div>
+        <div id="sp-4">Beskriv Deadlock:
+            <p>
+                en deadlock sker når to ting i et program kæmper om en ressource,<br/>
+                hvor der ikke er nok af denne tilængligt<br/>
+                indtil systemet går i stå eller bryder ned.
+            </p>
+        </div>
+            </div>
+    </div>
+    <div id="om-4">
+        <div id="tabs-om-4">
+            <ul>
+                <li><a href="#sp-1">1</a></li>
+                <li><a href="#sp-2">2</a></li>
+                <li><a href="#sp-3">3</a></li>
+                <li><a href="#sp-4">4</a></li>
+            </ul>
+            <div id="sp-1">Hvad bruges DNS til ift. Computer netværk?
+                <p>DNS er Domain Name Server, og bruges til at findes din IP på nettet<br/>
+                f.eks hvis du skriver Facebook.com, går din maskine ikke ind og finder<br/>
+                addressen Facebook, men IP det er blive sat til at være synonym med<br/>
+                Facebook.com</p>
+            </div>
+             <div id="sp-2">Kan man se hvilke data (filer) der bruges af et webside? Hvis ja hvordan?
+                <p>højre-klick en hjemme side brug funktionen inspicer, check elementer og genindlæs siden</p>
+            </div>
+             <div id="sp-3">Hvordan kan man kende forskel på Ipv4 og Ipv6?
+                <p>ipv4 er skrevet i decimal og indeholder 32-bit data<br/>
+                ipv6 er skrevet i hexadecimal og indeholder 128-bit data</p>
+            </div>
+             <div id="sp-4">Vis eller beskriv de kommandoer du kender ift. netværk
+                 som kan bruges i et terminal vindue. Det kan f.eks. være ”ping” kommandoen.
+                <p>Ping er en kommando man kan bruge i en terminal til at sende en "ping" til en ip-addresse<br>
+                herefter får man så tilbage et svar om hvor hurtigt ens maskine har tilgået siden</p>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="webs">
+        <table>
+            <tr>
+                <td>Navn</td>
+                <td style="padding-left: 20px;padding-right: 20px;"><input id="navn"
+                                                                           alt="Klik på knappen og se svaret fra webserveren"
+                                                                           title="Klik på knappen og se svaret fra webserveren">
+                </td>
+                <td>
+                    <button id="btnRun">Test webservice</button>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <b>Svar fra webservice</b>
+        <div id="webresult"></div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
